@@ -1,32 +1,35 @@
-.recipe{
-    border-radius : 20px;
-    height: 400px;
-    cursor: pointer;
-    &:hover {
-        img{
-            transform:scale(1.1)
-        }
-        .recipeTitle{
-            color:var(--primary);
-        }
+.recipe {
+  border-radius: 20px;
+  height: 400px;
+  cursor: pointer;
+  i {
+    font-size: 20px;
+  }
+  &:hover {
+    img {
+      transform: scale(1.1);
     }
+    .recipeTitle {
+      color: var(--primary);
+    }
+  }
 }
 
-.imageContainer{
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    overflow: hidden;
-    height: 300px;
-    img{
-        transition:1s transform;
-        width: 100%;
-    }
+.imageContainer {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  overflow: hidden;
+  height: 300px;
+  img {
+    transition: 1s transform;
+    width: 100%;
+  }
 }
 
-.recipeTitle{
-    border:1px solid var(--gray-2);
-    transition:0.2s color;
-    border-bottom-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    height: 100px;
+.recipeTitle {
+  border: 1px solid var(--gray-2);
+  transition: 0.2s color;
+  border-bottom-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  height: 100px;
 }
