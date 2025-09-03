@@ -1,23 +1,35 @@
 import styles from "./Header.module.scss";
 import cookchef from "../assets/images/cookchef.png";
+import { useState } from "react";
+import HeaderMenu from "./HeaderMenu";
 
+function Header() {
+  const [showMenu, setShowMenu] = useState(false);
 
-function Header(){
-    return (
-        <header className={`${styles.header} d-flex flex-row align-items-center`}>
-            {<i class="fa-solid fa-bars mr-15" ></i>}
-            <div className='flex-fill'>
-                <img src={cookchef} alt="logo cookchef" />
-            </div>
-            <ul>
-                <button className="mr-5 btn btn-reverse-primary">
-                    <i class="fa-solid fa-basket-shopping mr-5"></i>
-                    <span>panier</span></button>
-                <button className="btn btn-primary">connexion</button>
-            </ul>
-        
-        </header>
-    )
+  return (
+    <header className={`${styles.header} d-flex flex-row align-items-center`}>
+      <div className="flex-fill">
+        <img src={cookchef} alt="logo cookchef" />
+      </div>
+      <ul className={styles.headerList}>
+        <button className="mr-5 btn btn-reverse-primary">
+          <i class="fa-solid fa-heart mr-5"></i>
+          <span>Wishlist</span>
+        </button>
+        <button className="btn btn-primary">connexion</button>
+      </ul>
+      <i
+        onClick={() => setShowMenu(!showMenu)}
+        className={`${styles.headerXs} fa-solid fa-bars`}
+      ></i>
+      {showMenu && (
+        <>
+          <div onClick={() => setShowMenu(false)} className="calc"></div>
+          <HeaderMenu />
+        </>
+      )}
+    </header>
+  );
 }
 
 export default Header;
